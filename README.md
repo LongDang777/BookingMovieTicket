@@ -1,10 +1,5 @@
 link deploy: 
-https://film-group3.vercel.app/?fbclid=IwAR1Dk0uN8Bl_udI4sncL8BjNd5t7IcoSMhbqVdpj71o2rW77aB66ZSi1fs0
-
-Phân chia công việc:
--Trần Văn Dũng: body trang home, trang chi tiết film
--Huỳnh Quốc Kỳ: Header, Footer, Login, Logout, Register, 50% trang chi tiết đặt vé.
--Đặng Long: 50% còn lại của trang chi tiết đặt vé, trang admin.
+bookingmovieLD.surge.sh
 
 
 # Getting Started with Create React App
