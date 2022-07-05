@@ -25,8 +25,8 @@ export const RegisterAction = (UserInfo) => {
             message.success('Đăng kí thành công')
         }
 
-        catch (errors) {
-            console.log(errors);
+        catch (err) {
+            message.warn(err.response.data)
         }
     }
 }

@@ -7,23 +7,11 @@ import styled from 'styled-components';
 import { layDanhSachNDAction } from '../../redux/actions/QuanLyNguoiDungAction';
 
 export default function Register() {
-    const dispatch = useDispatch();
+    
+    const dispatch = useDispatch()
+    
     const { userInfo } = useSelector(state => state.RegisterReducer);
 
-
-    useEffect(() => {
-        dispatch(layDanhSachNDAction());
-    }, [])
-
-
-    const { mangND } = useSelector(state => state.QuanLyNguoiDungReducer);
-    const userName = mangND.map((value, index) => {
-        return value.taiKhoan
-    })
-
-    const userMail = mangND.map((value, index) => {
-        return value.email
-    })
 
     const formik = useFormik({
         initialValues: {
@@ -35,16 +23,14 @@ export default function Register() {
             hoTen: '',
         },
         validationSchema: Yup.object({
-            taiKhoan: Yup.string().required('Tài khoản không được để trống')
-                .notOneOf(userName, 'Tài khoản bị trùng trong mã nhóm GP03'),
+            taiKhoan: Yup.string().required('Tài khoản không được để trống'),
             matKhau: Yup.string()
                 .required("Mật khẩu không được để trống")
                 .min(6, "Mật khẩu phải từ 6-12 ký tự")
                 .max(12, 'Mật khẩu phải từ 6-12 ký tự'),
             email: Yup.string().
                 required('Email không được để trống')
-                .email('Email không đúng định dạng')
-                .notOneOf(userMail, 'Email bị trùng trong mã nhóm GP03'),
+                .email('Email không đúng định dạng'),
             soDt: Yup.string().required('Số điện thoại không được để trống'),
             hoTen: Yup.string().required('Họ và tên không được để trống'),
         }),

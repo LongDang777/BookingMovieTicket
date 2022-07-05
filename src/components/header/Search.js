@@ -20,7 +20,6 @@ export default function Search(props) {
   }
   
   const { mangPhim } = useSelector(state => state.QuanLyPhimReducer)
-  console.log(mangPhim);
   const renderContenSearch=()=>{
     return mangPhim.map((item,index)=>{
       return (
