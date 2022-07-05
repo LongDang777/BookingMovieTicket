@@ -105,7 +105,7 @@ export default function Register() {
 
 const ButtonStyled = styled.button`
     color: #fff;
-    background-color: #007bff;
+    background-color: #007bff !important;
     border-color: #007bff;
 
     &:hover {
