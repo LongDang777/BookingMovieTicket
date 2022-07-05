@@ -1,0 +1,3 @@
+export const DISPLAY_lOADING = 'DISPLAY_lOADING';
+export const HIDDEN_lOADING = 'HIDDEN_lOADING';
+
