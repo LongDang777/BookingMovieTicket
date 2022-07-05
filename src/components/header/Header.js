@@ -1,5 +1,5 @@
 import { Button, Modal, Select } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import "../../assets/style/reset.scss";
 import { useSelector, useDispatch } from 'react-redux';
@@ -9,6 +9,9 @@ import LogOut from '../logout/LogOut';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './header.css'
+import Search from './Search';
+import { layDanhSachPhimAction } from '../../redux/actions/QuanLyPhimAction';
+
 
 const { Option } = Select;
 
@@ -19,10 +22,28 @@ export default function Header() {
     i18n.changeLanguage(value)
   }
 
+  
   const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(layDanhSachPhimAction())
+  }, [])
+  const { mangPhim } = useSelector(state => state.QuanLyPhimReducer)
+  const mangTenPhim = [];
+  const taoMangTenPhim =()=>{
+    for(const phim of mangPhim)
+     mangTenPhim.push(phim.tenPhim)
+  }
+  taoMangTenPhim();
+
+  localStorage.setItem('mangTenPhim',JSON.stringify(mangTenPhim))
+
+  
+  
   const { Component, isVisible } = useSelector(state => state.ModalReducer)
   const { userLogin } = useSelector(state => state.LogReducer)
   const [title, setTitle] = useState("");
+
+
 
   const handleCancel = () => {
     dispatch({
@@ -51,7 +72,7 @@ export default function Header() {
 
   //scroll up/down
   const body = document.body;
-  const nav = document.querySelector(".header");
+  // const nav = document.querySelector(".header");
   const scrollUp = "scroll-up";
   const scrollDown = "scroll-down";
   let lastScroll = 0;
@@ -79,9 +100,10 @@ export default function Header() {
   });
 
   return (
-    <div className='header '>
+    <div className='header'>
       <nav className="container header__content d-flex justify-content-between navbar navbar-expand-lg ">
         <NavLink to="/" className="brand fw-700">MovieCyber</NavLink>
+        <Search/>
         <div className="sign-in-up d-flex">
           {!!userLogin.taiKhoan ?
             <LogOut />
@@ -111,6 +133,9 @@ export default function Header() {
       >
         {Component}
       </Modal>
+
+
+
     </div>
   )
 }

@@ -1,5 +1,5 @@
 link deploy: 
-bookingmovieLD.surge.sh
+https://booking-movie-ticket-six.vercel.app/
 
 
 # Getting Started with Create React App

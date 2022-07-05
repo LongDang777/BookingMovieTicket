@@ -19,6 +19,7 @@ import AddUser from "./pages/Admin/Dashboard/AddUser";
 import EditUser from "./pages/Admin/Dashboard/EditUser";
 import Loading from './components/Loading/Loading';
 
+
 export const history = createBrowserHistory();
 
 function App() {

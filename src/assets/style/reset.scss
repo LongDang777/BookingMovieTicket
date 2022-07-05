@@ -1,4 +1,7 @@
-
+html{
+    overflow-x: hidden;
+    text-align: center;
+}
 /* ------------------- margin  ------------------- */
 .m-t-5 {
     margin-top: 5px;
@@ -19,6 +22,21 @@
 .m-t-40 {
     margin-top: 40px;
 }
+.m-t-50 {
+    margin-top: 50px;
+}
+.m-t-60 {
+    margin-top: 60px;
+}
+.m-t-70 {
+    margin-top: 70px;
+}
+.m-t-100 {
+    margin-top: 100px;
+}
+
+
+
 
 .m-r-5 {
     margin-right: 5px;
