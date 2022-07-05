@@ -8,6 +8,7 @@ import Login from '../form/Login';
 import LogOut from '../logout/LogOut';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import './header.css'
 
 const { Option } = Select;
 
@@ -48,10 +49,39 @@ export default function Header() {
     })
   };
 
+  //scroll up/down
+  const body = document.body;
+  const nav = document.querySelector(".header");
+  const scrollUp = "scroll-up";
+  const scrollDown = "scroll-down";
+  let lastScroll = 0;
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll <= 0) {
+      body.classList.remove(scrollUp);
+      return;
+    }
+
+    if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
+      // down
+      body.classList.remove(scrollUp);
+      body.classList.add(scrollDown);
+    } else if (
+      currentScroll < lastScroll &&
+      body.classList.contains(scrollDown)
+    ) {
+      // up
+      body.classList.remove(scrollDown);
+      body.classList.add(scrollUp);
+    }
+    lastScroll = currentScroll;
+  });
+
   return (
-    <HeaderStyled>
-      <div className="header d-flex">
-        <NavLink to="/" className="brand fw-700">movieCyber</NavLink>
+    <div className='header '>
+      <nav className="container header__content d-flex justify-content-between navbar navbar-expand-lg ">
+        <NavLink to="/" className="brand fw-700">MovieCyber</NavLink>
         <div className="sign-in-up d-flex">
           {!!userLogin.taiKhoan ?
             <LogOut />
@@ -72,7 +102,7 @@ export default function Header() {
           </Select>
 
         </div>
-      </div>
+      </nav>
       <Modal
         title={title}
         visible={isVisible}
@@ -81,35 +111,7 @@ export default function Header() {
       >
         {Component}
       </Modal>
-    </HeaderStyled>
+    </div>
   )
 }
 
-const HeaderStyled = styled.div`
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-
-  .header {
-    width: 90%;
-    margin: 25px 5%;
-    justify-content: space-between;
-    align-items: center;
-
-    .brand {
-      text-transform: uppercase;
-      font-size: 32px;
-      color: #fff;
-      margin: 0;
-    }
-  }
-
-  .sign-in-up {
-    gap: 10px;
-
-    .ant-btn {
-      font-size: 16px;
-      background-color: #fff;
-    }
-  }
-
-`

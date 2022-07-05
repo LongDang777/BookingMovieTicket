@@ -1,0 +1,14 @@
+.carousel__content {
+  background-size  : cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height           : 100vh;
+  align-items: flex-end;
+  color: '#fff';
+  textAlign: 'center';
+  background: '#364d79';
+}
+
+.slick-dots {
+  width: auto;
+}

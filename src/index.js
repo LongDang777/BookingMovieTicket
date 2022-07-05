@@ -11,6 +11,7 @@ import { DOMAIN } from './util/config';
 import * as signalR from '@aspnet/signalr'
 //import da ngon ngu
 import './i18n';
+import './assets/boxicons-2.0.7/css/boxicons.min.css'
 
 // connect server
 export const connection = new signalR.HubConnectionBuilder().withUrl(`${DOMAIN}/DatVeHub`).configureLogging(signalR.LogLevel.Information).build();

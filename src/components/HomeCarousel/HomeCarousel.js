@@ -5,6 +5,8 @@ import "../../assets/style/reset.scss";
 import { useSelector, useDispatch } from 'react-redux';
 import { Carousel } from 'antd';
 import { LayDanhSachBanner } from '../../action/CarouselAction';
+import './HomeCarousel.css'
+
 
 export const HomeCarousel = () => {
     const dispatch = useDispatch();
@@ -22,43 +24,17 @@ export const HomeCarousel = () => {
     const RenderCarousel = () => {
         return arrBanner.map((item, index) => {
             return <div key={index}>
-                <div className='carousel' style={{ backgroundImage: `url(${item.hinhAnh})` }}></div>
+                <div className='carousel__content' style={{ backgroundImage: `url(${item.hinhAnh})` }}></div>
             </div>
         })
     }
 
     return (
-        <HomeCarouselStyled>
+        <div className='container carousel'>
             <Carousel effect="fade">
                 {RenderCarousel()}
             </Carousel>
-        </HomeCarouselStyled>
+        </div>
     )
 }
 
-const HomeCarouselStyled = styled.div`
-
-    .carousel {
-        background-size  : cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        width            : 100%;
-        height           : 100vh;
-        align-items: flex-end;
-        height: '160px';
-        color: '#fff';
-        lineHeight: '160px';
-        textAlign: 'center';
-        background: '#364d79';
-
-        .content {
-            .name {
-                color: #fff;
-            }
-        }
-    }
-
-    .slick-dots {
-        width: auto;
-    }
-`

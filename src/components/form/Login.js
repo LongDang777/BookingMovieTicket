@@ -35,8 +35,8 @@ export default function Login() {
             })
         };
         if (userLogin.maLoaiNguoiDung === 'QuanTri') {
-            alert('Bạn là thành viên của Quản trị viên, trình duyệt sẽ chuyển sang trang quản trị')
-            history.push('/admin')
+            alert('Bạn là thành viên của Quản trị viên, có thể truy cập /admin')
+            history.push('/')
         }
 
     }, [userLogin])
@@ -51,14 +51,14 @@ export default function Login() {
 
         }}>
             <div className="form-group">
-                <label >Tài khoản</label>
+                <label >Tài khoản longdang</label>
                 <input onChange={formik.handleChange} onBlur={formik.handleBlur} type="text" name='taiKhoan' className="form-control" />
                 {formik.touched.taiKhoan && formik.errors.taiKhoan ? (
                     <div className='alert alert-danger'>{formik.errors.taiKhoan}</div>
                 ) : null}
             </div>
             <div className="form-group">
-                <label>Mật khẩu</label>
+                <label>Mật khẩu 123456</label>
                 <input onChange={formik.handleChange} onBlur={formik.handleBlur} type="password" name='matKhau' className="form-control" />
                 {formik.touched.matKhau && formik.errors.matKhau ? (
                     <div className='alert alert-danger'>{formik.errors.matKhau}</div>

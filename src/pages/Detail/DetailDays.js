@@ -1,7 +1,5 @@
 import './DetailDays.css'
 import React, { Fragment, useState } from 'react'
-import { useSelector } from 'react-redux';
-
 import { Tabs } from 'antd';
 import { NavLink } from 'react-router-dom';
 import moment from 'moment';
@@ -16,6 +14,13 @@ export default function DetailDays(props) {
 
 
   const { tabPosition } = state;
+
+  const gioChieu ={
+    margin: '10px 0 0 0',
+    padding: '5px 10px',
+    border: '1px solid',
+    color: '#43464b',
+  }
 
   return (
     <div className='detailDay'>
@@ -47,7 +52,7 @@ export default function DetailDays(props) {
                             <Fragment key={index}>
                               <div className='my-5'>
                                 <div style={{ display: 'flex' }}>
-                                  <img width={50} height={80} src={phim.hinhAnh} alt={phim.tenPhim} />
+                                  <img width={100} height={80} src={phim.hinhAnh} alt={phim.tenPhim} />
                                   <div className="ml-2">
                                     <h3 style={{ fontSize: '0.9rem' }} className=''>{phim.tenPhim}</h3>
                                     <p>{cumRap.diaChi}</p>
@@ -55,7 +60,9 @@ export default function DetailDays(props) {
                                     <div className="grid grid-cols-6 gap-6">
                                       {phim.lstLichChieuTheoPhim?.slice(0, 12).map((lichChieu, index) => (
                                         <NavLink to={`/checkout/${lichChieu.maLichChieu}`} className='mr-2' key={index}>
+                                          <div className='gioChieu'>
                                           {moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}
+                                          </div>
                                         </NavLink>
                                       ))}
 
