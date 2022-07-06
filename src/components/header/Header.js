@@ -103,7 +103,7 @@ export default function Header() {
     <div className='header'>
       <nav className="container header__content d-flex justify-content-between navbar navbar-expand-lg ">
         <NavLink to="/" className="brand fw-700">MovieCyber</NavLink>
-        <Search/>
+        {/* <Search/> */}
         <div className="sign-in-up d-flex">
           {!!userLogin.taiKhoan ?
             <LogOut />

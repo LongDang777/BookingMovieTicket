@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { history } from '../../App';
 import { layDanhSachPhimAction } from '../../redux/actions/QuanLyPhimAction';
-
+import './search.css'
 
 export default function Search(props) {
 
@@ -24,7 +23,6 @@ export default function Search(props) {
     return mangPhim.map((item,index)=>{
       return (
          <div className='d-flex flex-column my-1' key={index}>
-
             <NavLink to={`/detail/${item.maPhim}`} >
               {item.tenPhim}
             </NavLink>
@@ -35,13 +33,13 @@ export default function Search(props) {
   }
 
   return (
-    <div className='col col-lg-4'>
+    <div className='col col-lg-4 searchFilm'>
       <input
         className='form-control round'
         onKeyUp={handleOnChange}
         placeholder='Type to search...'>
       </input>
-      <div> {value ? renderContenSearch(): ''}</div>
+      <div className='pt-2 search__content'> {value !== '' ? renderContenSearch(): ''}</div>
     </div>
   )
 }
