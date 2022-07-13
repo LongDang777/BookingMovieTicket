@@ -40,7 +40,7 @@ export const datVeAction = (thongTinDatVe = new ThongTinDatVe()) => {
       message.success('Đặt vé thành công')
     } catch (error) {
       dispatch(hiddenLoadingAction)
-      message.warn(error.response.data)
+      message.warn('vì lí dó API không ổn định vui lòng chọn ghế khác')
       console.log(error.response.data);
     }
   }

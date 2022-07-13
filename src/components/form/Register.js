@@ -56,13 +56,6 @@ export default function Register() {
             formik.handleSubmit(e);
         }}>
             <div className="form-group">
-                <label>Họ và tên</label>
-                <input onChange={formik.handleChange} onBlur={formik.handleBlur} type="text" name='hoTen' className="form-control" />
-                {formik.touched.hoTen && formik.errors.hoTen ? (
-                    <div className='alert alert-danger'>{formik.errors.hoTen}</div>
-                ) : null}
-            </div>
-            <div className="form-group">
                 <label >Tài khoản</label>
                 <input onChange={formik.handleChange} onBlur={formik.handleBlur} type="text" name='taiKhoan' className="form-control" />
                 {formik.touched.taiKhoan && formik.errors.taiKhoan ? (
@@ -70,6 +63,14 @@ export default function Register() {
                 ) : null}
 
             </div>
+            <div className="form-group">
+                <label>Họ và tên</label>
+                <input onChange={formik.handleChange} onBlur={formik.handleBlur} type="text" name='hoTen' className="form-control" />
+                {formik.touched.hoTen && formik.errors.hoTen ? (
+                    <div className='alert alert-danger'>{formik.errors.hoTen}</div>
+                ) : null}
+            </div>
+            
             <div className="form-group">
                 <label>Mật khẩu</label>
                 <input onChange={formik.handleChange} onBlur={formik.handleBlur} type="password" name='matKhau' className="form-control" />

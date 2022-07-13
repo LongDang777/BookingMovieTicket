@@ -13,7 +13,6 @@ export default function FilmDetail() {
   const dispatch = useDispatch()
   
   useEffect(() => {
-
     const action = layDanhSachReducer()
     dispatch(action)
   }, [])

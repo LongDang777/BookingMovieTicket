@@ -1,0 +1,36 @@
+.filmDetail__descrip__button {
+  background: none;
+  border: 2px solid #f26b38;
+
+}
+
+.filmDetail__descrip__button:hover {
+  color: #ffffff;
+  background-color: #f26b38;
+  border-color: #f26b38;
+}
+
+
+.btnPhim {
+  font-size: 18px !important;
+  font-weight: 400;
+  color: #a0a3a7;
+  padding: 10px 0;
+  transition:  all 0.3s;
+}
+.btnPhim:hover {
+  color: #43464b !important;
+  background: transparent;
+}
+
+.btnPhim::after{
+    content: "";
+    background: #f26b38;
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -1px;
+    transition: all 250ms ease 0s;
+    transform: scale(0);
+}

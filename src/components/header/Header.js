@@ -1,6 +1,5 @@
 import { Button, Modal, Select } from 'antd';
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import "../../assets/style/reset.scss";
 import { useSelector, useDispatch } from 'react-redux';
 import Register from '../form/Register';

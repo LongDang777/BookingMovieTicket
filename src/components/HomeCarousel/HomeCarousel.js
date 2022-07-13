@@ -3,6 +3,10 @@ import "../../assets/style/reset.scss";
 import { useSelector, useDispatch } from 'react-redux';
 import { LayDanhSachBanner } from '../../action/CarouselAction';
 import Carousel from 'better-react-carousel'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+
+
 
 export const HomeCarousel = () => {
     const dispatch = useDispatch();
@@ -13,7 +17,7 @@ export const HomeCarousel = () => {
         dispatch(actionFunction);
     }
 
-    
+
     useEffect(() => {
         callAPIBanner();
     }, [])
@@ -28,6 +32,18 @@ export const HomeCarousel = () => {
                     </Carousel.Item>
                 })}
             </Carousel>
+            {/* <Swiper
+                spaceBetween={50}
+                slidesPerView={3}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+            >
+                {arrBanner.map((item, index) => {
+                    return <SwiperSlide key={index}>
+                        <img width="510px" src={item.hinhAnh} />
+                    </SwiperSlide>
+                })}
+            </Swiper> */}
         </div>
     )
 

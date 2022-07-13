@@ -1,13 +1,14 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import styleSlick from "./MultipleRowSlick.module.css";
-import { Button } from "antd";
-import { useDispatch, useSelector } from "react-redux";
+import './buttonPhim.css'
+import { useDispatch } from "react-redux";
 import {
   SET_PHIM_DANG_CHIEU,
   SET_PHIM_SAP_CHIEU,
 } from "../../redux/type/quanLyPhimType";
 import { NavLink } from "react-router-dom";
+
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -55,62 +56,32 @@ export default function MultipleRows(props) {
   };
 
   const dispatch = useDispatch();
-
-  const { sapChieu, dangChieu } = useSelector(
-    (state) => state.QuanLyPhimReducer
-  );
-  const [styleDang, setStyleDang] = useState(false);
-  const [styleSap, setStyleSap] = useState(false);
-
+ 
   return (
     <div className="container border-top border-bottom py-4 mt-4">
-      <Button
-        style={
-          styleDang === sapChieu
-            ? {
-              color: "#fff",
-              borderColor: " #1890ff",
-              background: "#1890ff",
-              textShadow: "0 -1px 0 rgb(0 0 0 / 12%)",
-              boxhadow: "0 2px 0 rgb(0 0 0 / 5%)",
-            }
-            : {}
-        }
-        className="mr-4"
+      <div className="border-bottom">
+      <button className="mr-4 btnPhim" 
         onClick={() => {
           const action = {
             type: SET_PHIM_DANG_CHIEU,
           };
           dispatch(action);
-          setStyleDang(true);
-          setStyleSap(false);
         }}
       >
-        Phim đang chiếu
-      </Button>
-      <Button
-        style={
-          styleSap === dangChieu
-            ? {}
-            : {
-              color: "#fff",
-              borderColor: " #1890ff",
-              background: "#1890ff",
-              textShadow: "0 -1px 0 rgb(0 0 0 / 12%)",
-              boxhadow: "0 2px 0 rgb(0 0 0 / 5%)",
-            }
-        }
+        PHIM ĐANG CHIẾU
+      </button>
+      <button className="btnPhim"
+       
         onClick={() => {
           const action = {
             type: SET_PHIM_SAP_CHIEU,
           };
           dispatch(action);
-          setStyleSap(true);
-          setStyleDang(false);
         }}
       >
-        Phim sắp chiếu
-      </Button>
+        PHIM SẮP CHIẾU
+      </button>
+      </div>
       <Slider {...settings}>
         {props.arrPhim.slice(0, 12).map((item, index) => (
           <div
@@ -143,7 +114,7 @@ export default function MultipleRows(props) {
                   to={`/detail/${item.maPhim}`}
                   className="filmDetail__descrip__button"
                 >
-                  Mua vé
+                  MUA VÉ
                 </NavLink>
               </div>
               <div className="overlay"></div>
