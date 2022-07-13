@@ -51,14 +51,14 @@ export default function Login() {
 
         }}>
             <div className="form-group">
-                <label >Tài khoản longdang</label>
+                <label >Tài khoản</label>
                 <input onChange={formik.handleChange} onBlur={formik.handleBlur} type="text" name='taiKhoan' className="form-control" />
                 {formik.touched.taiKhoan && formik.errors.taiKhoan ? (
                     <div className='alert alert-danger'>{formik.errors.taiKhoan}</div>
                 ) : null}
             </div>
             <div className="form-group">
-                <label>Mật khẩu 123456</label>
+                <label>Mật khẩu</label>
                 <input onChange={formik.handleChange} onBlur={formik.handleBlur} type="password" name='matKhau' className="form-control" />
                 {formik.touched.matKhau && formik.errors.matKhau ? (
                     <div className='alert alert-danger'>{formik.errors.matKhau}</div>
