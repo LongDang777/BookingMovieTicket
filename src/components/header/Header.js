@@ -37,8 +37,6 @@ export default function Header() {
 
   localStorage.setItem('mangTenPhim',JSON.stringify(mangTenPhim))
 
-  
-  
   const { Component, isVisible } = useSelector(state => state.ModalReducer)
   const { userLogin } = useSelector(state => state.LogReducer)
   const [title, setTitle] = useState("");
@@ -53,7 +51,7 @@ export default function Header() {
   };
 
   const showLogin = () => {
-    setTitle("Login");
+    setTitle("Đăng Nhập");
     dispatch({
       type: 'OPEN_MODAL',
       Component: <Login />,
@@ -62,7 +60,7 @@ export default function Header() {
   };
 
   const showRegister = () => {
-    setTitle("Register");
+    setTitle("Đăng Kí");
     dispatch({
       type: 'OPEN_MODAL',
       Component: <Register />,
@@ -110,10 +108,10 @@ export default function Header() {
             :
             <>
               <Button onClick={showLogin}>
-                {t("Log in")}
+                {t("Đăng Nhập")}
               </Button>
               <Button onClick={showRegister}>
-                {t("Register")}
+                {t("Đăng Kí")}
               </Button>
             </>
           }

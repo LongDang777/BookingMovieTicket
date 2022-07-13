@@ -35,6 +35,7 @@ const AddUser = () => {
       soDt: '',
       maNhom: '',
       maLoaiNguoiDung: '',
+      matKhau: '',
     },
     validationSchema: Yup.object({
       taiKhoan: Yup.string().trim('Tài khoản không được để trống').required('Tài khoản không được để trống').notOneOf(userName, 'Tài khoản bị trùng trong mã nhóm GP03'),

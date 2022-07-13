@@ -35,6 +35,7 @@
     "sass-loader": "^12.6.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5",
+    "sweetalert2": "^11.4.21",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },

@@ -29,7 +29,7 @@ export default function DetailDays(props) {
         <div className="row">
           <Tabs tabPosition={tabPosition}>
             {
-              props.heThongRapChieu?.map((heThongRap, index) => (
+              props.heThongRapChieu?.reverse().map((heThongRap, index) => (
 
                 <TabPane tab={<img src={heThongRap.logo} style={{ width: '50px' }} />} key={index}>
                   <Tabs tabPosition={tabPosition}>
@@ -48,7 +48,7 @@ export default function DetailDays(props) {
 
                           {/* load fim tương ứng */}
 
-                          {cumRap.danhSachPhim.reverse().map((phim, index) => (
+                          {cumRap.danhSachPhim.map((phim, index) => (
                             <Fragment key={index}>
                               <div className='my-5'>
                                 <div style={{ display: 'flex' }}>

@@ -40,7 +40,8 @@ export const datVeAction = (thongTinDatVe = new ThongTinDatVe()) => {
       message.success('Đặt vé thành công')
     } catch (error) {
       dispatch(hiddenLoadingAction)
-      console.log(error);
+      message.warn(error.response.data)
+      console.log(error.response.data);
     }
   }
 }

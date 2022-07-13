@@ -1,0 +1,162 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap');
+
+.formProfile{
+  padding: 100px;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #eeeeee;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.formProfile form{
+  background: #fff;
+  padding: 20px;
+  width: 600px;
+}
+.formProfile h2 {
+  text-align: center;
+  color: #12263f;
+  font-weight: bold;
+  margin: 30px 0 70px 0;
+  font-size: 25px;
+}
+
+.formProfile h2 small {
+  font-weight: normal;
+  color: #888;
+  display: block;
+}
+
+/* form starting stylings ------------------------------- */
+.formProfile .group {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.formProfile input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+.formProfile input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+.formProfile label {
+  color: #999;
+  font-size: 17px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+.formProfile input:focus~label,
+.formProfile input:valid~label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264ae;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.formProfile .bar:before,
+.formProfile .bar:after {
+  content: "";
+  height: 1px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264ae;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.formProfile .bar:before {
+  left: 50%;
+}
+
+.formProfile .bar:after {
+  right: 50%;
+}
+
+/* active state */
+.formProfile input:focus~.bar:before,
+.formProfile input:focus~.bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.formProfile .highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+.formProfile input:focus~.highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+.formProfile .btn-cyber{
+  background-color: #40130e ;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+   from {
+    background: #5264ae;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}

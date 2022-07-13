@@ -157,7 +157,6 @@ const Checkout = (props) => {
                             const thongTinDatVe = new ThongTinDatVe();
                             thongTinDatVe.maLichChieu = props.match.params.id;
                             thongTinDatVe.danhSachVe = danhSachGheDangDat;
-
                             dispatch(datVeAction(thongTinDatVe))
 
                         }} className='pointer bg-green-500 text-white w-full text-center p-y-6 fw-500 fs-18 radius-5'>
