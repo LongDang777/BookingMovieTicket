@@ -25,7 +25,7 @@ export default function DetailDays(props) {
   return (
     <div className='detailDay'>
       <div className='container'>
-          <h2 className='detailDay__header mb-3 pt-3'>Mua vé theo rạp</h2>
+          <h2 className='detailDay__header mb-3 pt-3'>MUA VÉ THEO RẠP</h2>
         <div className="row">
           <Tabs tabPosition={tabPosition}>
             {

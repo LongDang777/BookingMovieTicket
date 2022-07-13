@@ -16,21 +16,37 @@
   font-weight: 400;
   color: #a0a3a7;
   padding: 10px 0;
-  transition:  all 0.3s;
+  position: relative;
+  transition: all 0.3s;
 }
+
 .btnPhim:hover {
+  cursor: pointer !important;
   color: #43464b !important;
   background: transparent;
 }
 
-.btnPhim::after{
-    content: "";
-    background: #f26b38;
-    height: 2px;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: -1px;
-    transition: all 250ms ease 0s;
-    transform: scale(0);
+.btnPhim::after {
+  content: "";
+  background: #f26b38;
+  height: 2px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -1px;
+  transition: all 250ms ease 0s;
+  transform: scale(0);
+}
+
+.btnPhim:focus{
+  color: #43464b !important;
+}
+
+.btnPhim:focus::after {
+  color: #43464b !important;
+  transform: scale(1);
+}
+
+.btnPhim:hover::after {
+  transform: scale(1);
 }

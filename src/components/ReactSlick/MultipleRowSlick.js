@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { NavLink } from "react-router-dom";
 import styleSlick from "./MultipleRowSlick.module.css";
 import './buttonPhim.css'
 import { useDispatch } from "react-redux";
@@ -7,7 +8,6 @@ import {
   SET_PHIM_DANG_CHIEU,
   SET_PHIM_SAP_CHIEU,
 } from "../../redux/type/quanLyPhimType";
-import { NavLink } from "react-router-dom";
 
 
 function SampleNextArrow(props) {
@@ -56,11 +56,13 @@ export default function MultipleRows(props) {
   };
 
   const dispatch = useDispatch();
- 
+  
+
+
   return (
     <div className="container border-top border-bottom py-4 mt-4">
-      <div className="border-bottom">
-      <button className="mr-4 btnPhim" 
+      <div className="border-bottom buttonPhimDangChieuSapChieu">
+      <button className="ml-4 mr-4 btnPhim" 
         onClick={() => {
           const action = {
             type: SET_PHIM_DANG_CHIEU,
