@@ -20,13 +20,9 @@ export default function Dashboard(props) {
     dispatch(layDanhSachNDAction());
   }, [])
 
-  // if (userLogin.maLoaiNguoiDung === 'KhachHang' && userLogin.maNhom !== 'GP03' || !(userLogin.maLoaiNguoiDung)) {
-  //     alert("Bạn không có quyền truy cập vào trang admin! Hãy đăng nhập băng tài khoản Admin thuộc nhóm GP03")
-  //     history.push('/')
-  // }
   
   if(!localStorage.getItem("LOGIN_USER")){
-    alert('Bạn không có quyền  truy cập vào trang này!')
+    alert('Bạn không có quyền  truy cập vào trang này!, vui đăng nhập bằng tài khoản Admin. user: longdang, pass: 123456')
     return <Redirect to='/'/>
   };
   

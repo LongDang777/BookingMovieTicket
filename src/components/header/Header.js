@@ -28,11 +28,11 @@ export default function Header() {
   }, [])
   const { mangPhim } = useSelector(state => state.QuanLyPhimReducer)
   const mangTenPhim = [];
-  const taoMangTenPhim =()=>{
-    for(const phim of mangPhim)
-     mangTenPhim.push(phim.tenPhim)
-  }
-  taoMangTenPhim();
+  // const taoMangTenPhim =()=>{
+  //   for(const phim of mangPhim)
+  //    mangTenPhim.push(phim.tenPhim)
+  // }
+  // taoMangTenPhim();
 
   localStorage.setItem('mangTenPhim',JSON.stringify(mangTenPhim))
 
@@ -99,8 +99,11 @@ export default function Header() {
   return (
     <div className='header'>
       <nav className="container header__content d-flex justify-content-between navbar navbar-expand-lg ">
-        <NavLink to="/" className="brand fw-700">MovieCyber</NavLink>
-        <Search/>
+        <div>
+         <NavLink to="/" className="brand fw-700 mr-3">MovieCyber</NavLink>
+        <NavLink to="/admin" className="fw-700 pointer ">Administrator</NavLink>
+        </div>
+        {/* <Search/> */}
         <div className="sign-in-up d-flex">
           {!!userLogin.taiKhoan ?
             <LogOut />
@@ -119,6 +122,7 @@ export default function Header() {
             <Option value="chi">China</Option>
             <Option value="vi">Vie</Option>
           </Select>
+     
 
         </div>
       </nav>
