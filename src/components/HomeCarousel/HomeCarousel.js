@@ -37,14 +37,14 @@ export const HomeCarousel = () => {
 
     return (
         <div className='m-t-100'>
-            {/* <Carousel scroll-snap={true} mobileBreakpoint={375} showDots={true} autoplay={10000} cols={1} rows={1} gap={10} loop>
+             <Carousel scroll-snap={true} mobileBreakpoint={375} showDots={true} autoplay={10000} cols={1} rows={1} gap={10} loop>
                 {arrBanner.map((item, index) => {
                     return <Carousel.Item key={index}>
                         <img width="100%" src={item.hinhAnh} />
                     </Carousel.Item>
                 })}
-            </Carousel> */}
-            <Swiper
+            </Carousel> 
+            {/* <Swiper
                 // install Swiper modules
                 modules={[Virtual, Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={50}
@@ -56,17 +56,17 @@ export const HomeCarousel = () => {
                 onSlideChange={() => console.log('slide change')}
             >
 
-                {/* {arrBanner.map((item, index) => {
+                 {arrBanner.map((item, index) => {
                     return <SwiperSlide key={index}>
                         <img width="100%" src={item.hinhAnh} />
                     </SwiperSlide>
-                })} */}
+                })} 
                 <SwiperSlide><img src={dietQuy}/></SwiperSlide>
                 <SwiperSlide><img src={latMat}/></SwiperSlide>
                 <SwiperSlide><img src={minions}/></SwiperSlide>
                 <SwiperSlide><img src={sinhTu}/></SwiperSlide>
                 <SwiperSlide><img src={thor}/></SwiperSlide>
-            </Swiper>
+            </Swiper> */}
         </div>
     )
 
